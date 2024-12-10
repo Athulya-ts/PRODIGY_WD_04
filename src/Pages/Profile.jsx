@@ -17,7 +17,7 @@ const Profile = () => {
             <center>
             <Avatar className="profile-avatar" src="images/img_white.jpg" alt="Profile" style = {{width: 170,height : 170}} /><br/>
             <Typography variant="h4">Athulya T S</Typography><br/>
-            <Typography variant="body1">+91 8220*****4</Typography>
+            <Typography variant="body1">+91 8********4</Typography>
             <Typography variant="body1">athulya1906@gmail.com</Typography>
             <Typography variant="body1">727721euit018@skcet.ac.in</Typography><br/>
             </center>
@@ -34,7 +34,7 @@ const Profile = () => {
           <Box className="bills-card">
             <Typography variant="h4">Current status</Typography><br/><Divider/><br/>
               <Typography variant="body1" sx = {{color:"red"}}>Not placed</Typography><br/><br/><br/>
-              <Typography variant="h4">Upcoming</Typography><br/><Divider/><br/>
+              <Typography variant="h4">Ongoing</Typography><br/><Divider/><br/>
               <Typography variant="body1" sx = {{color:"green"}}>Internship in Accenture starting from May 20 to July 19</Typography><br/>
           </Box>
         </Box>

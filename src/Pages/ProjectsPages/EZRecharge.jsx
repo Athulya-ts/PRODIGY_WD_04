@@ -43,10 +43,18 @@ function EZRecharge() {
             {/* <Button variant="contained" color="primary" href= "http://www.cmscbe.net/cmsmatriculationganapathy.html">View official site&nbsp;&nbsp;&nbsp;<i className = "fa fa-external-link" style = {{fontSize:15}}></i></Button> */}
           </Grid>
           <ImageContainer item xs={12} md={6}>
-            <img src = "images/ez-user.png" width = {500} alt = "recharge-admin-app"/>
+            {/* <img src = "images/ez-user.png" width = {500} alt = "recharge-admin-app"/> */}
+            <video className="ez-recharge-video" controls>
+              <source src="videos/EZRecharge.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </ImageContainer>
           <ImageContainer item xs={12} md={6}>
-            <img src = "images/ez-admin.png" width = {500} alt = "recharge-app"/>  
+            {/* <img src = "images/ez-admin.png" width = {500} alt = "recharge-app"/>   */}
+            <video className="ez-recharge-video" controls>
+              <source src="videos/EZRecharge-Admin.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </ImageContainer>
           <div className='ez-right' style = {{marginTop: 170,marginLeft: 50}}>
             <Typography variant="h6" paragraph>

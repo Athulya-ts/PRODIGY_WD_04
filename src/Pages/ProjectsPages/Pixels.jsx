@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Button, Typography, Box} from '@mui/material';
+import { Container, Grid, Typography, Box} from '@mui/material';
 import { styled } from '@mui/system';
 
 const Root = styled('div')(({ theme }) => ({
@@ -46,7 +46,7 @@ function Pixels() {
           </Grid>
           <ImageContainer item xs={12} md={6}>
             <video className="ez-recharge-video" controls>
-              <source src="videos/3pixels.mp4" type="video/mp4" />
+              <source src="videos/3-pixels.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </ImageContainer>

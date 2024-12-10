@@ -43,7 +43,11 @@ function HRManagement() {
             {/* <Button variant="contained" color="primary" href= "http://www.cmscbe.net/cmsmatriculationganapathy.html">View official site&nbsp;&nbsp;&nbsp;<i className = "fa fa-external-link" style = {{fontSize:15}}></i></Button> */}
           </Grid>
           <ImageContainer item xs={12} md={6}>
-            <img src = "videos/hr.png" width = {500} alt = "hr-app" style = {{marginTop:40}}/>
+            {/* <img src = "videos/hr.png" width = {500} alt = "hr-app" style = {{marginTop:40}}/> */}
+            <video className="ez-recharge-video" controls>
+              <source src="videos/hrm.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </ImageContainer>
         </Content>
       </Container>
