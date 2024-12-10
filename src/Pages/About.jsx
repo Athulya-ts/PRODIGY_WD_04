@@ -60,7 +60,7 @@ function About() {
               I am currently pursuing my final year in the department of Information Technology at Sri Krishna College of Engineering and Technology, Coimbatore.
             </Typography>
             <Typography variant="body1" paragraph>
-              My current CGPA is 8.36. I currently have a 2-month internship offer at hand from Accenture, the base location being Bangalore.
+              My current CGPA is 8.36. I have completed an internship at Accenture as Package App Development Associate, the base location being Bangalore. I currently hold a 6 months Internship offer at Amazon, Chennai as SDE.
             </Typography>
             <Button variant="contained" color="primary" href="https://skcet.ac.in/">
               View official site&nbsp;&nbsp;&nbsp;<i className="fa fa-external-link" style={{ fontSize: 15 }}></i>
