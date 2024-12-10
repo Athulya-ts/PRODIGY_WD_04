@@ -1,45 +1,170 @@
-
 import React from 'react';
-import { Container, Box, Avatar, Typography, Divider } from '@mui/material';
+import { Container, Box, Avatar, Typography, Divider, Grid, Card} from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGoogle,faGithubSquare, faCodepen} from '@fortawesome/free-brands-svg-icons';
-import './Pages.css';
+import { faLinkedin, faGoogle, faGithubSquare, faCodepen } from '@fortawesome/free-brands-svg-icons';
 
 const Profile = () => {
   return (
-    <Container maxWidth="lg" className="dashboard-container">
-      <Box className="main-content">
-        <Typography variant="h4">My Dashboard</Typography><br/>
-        <Divider /><br/>
+    <Box
+      sx={{
+        background: 'linear-gradient(135deg, #f3f4f6, #e0e7ff)',
+        minHeight: '100vh',
+        padding: 4,
+      }}
+    >
+      <Container maxWidth="lg">
+        <Typography
+          variant="h3"
+          textAlign="center"
+          gutterBottom
+          sx={{
+            fontWeight: 'bold',
+            color: '#1e293b',
+            marginBottom: 4,
+          }}
+        >
+          My Dashboard
+        </Typography>
 
-        <Box className="profile-section">
-          <Box className="profile-card">
-            <center>
-            <Avatar className="profile-avatar" src="images/img_white.jpg" alt="Profile" style = {{width: 170,height : 170}} /><br/>
-            <Typography variant="h4">Athulya T S</Typography><br/>
-            <Typography variant="body1">+91 8********4</Typography>
-            <Typography variant="body1">athulya1906@gmail.com</Typography>
-            <Typography variant="body1">727721euit018@skcet.ac.in</Typography><br/>
-            </center>
-          </Box>
+        <Divider sx={{ marginBottom: 4 }} />
 
-          <Box className="accounts-card">
-            <Typography variant="h4">Social accounts</Typography><br/><Divider/><br/>
-              <Typography variant="h6"><a style = {{textDecoration:"none"}} href = "https://myaccount.google.com/?SafeSearchOverrideState=false&SafeSearchState=true&GwsOriginUrl=https://www.google.com/search?client%3Dfirefox-b-d%26q%3Dgoogle%2Baccount&SafeSearchBlurState=false&utm_source=ga-ob-search&utm_medium=google-account"><FontAwesomeIcon icon={faGoogle} /> &nbsp;&nbsp;&nbsp;&nbsp;Google</a></Typography><br/>
-              <Typography variant="h6"><a style = {{textDecoration:"none"}} href = "https://www.linkedin.com/in/athulya-t-s-132538258/"><FontAwesomeIcon icon={faLinkedin} /> &nbsp;&nbsp;&nbsp;&nbsp;Linked in</a></Typography><br/>
-              <Typography variant="h6"><a style = {{textDecoration:"none"}} href = "https://leetcode.com/u/Athulya_T_S/"><FontAwesomeIcon icon={faCodepen} />&nbsp;&nbsp;&nbsp;&nbsp;Leetcode</a></Typography><br/>
-              <Typography variant="h6"><a style = {{textDecoration:"none"}} href = "https://github.com/Athulya-ts"><FontAwesomeIcon icon={faGithubSquare} /> &nbsp;&nbsp;&nbsp;&nbsp;Github </a></Typography><br/>
-              <Typography variant="h6"><a style = {{textDecoration:"none"}} href = "https://www.hackerrank.com/profile/727721euit018"><FontAwesomeIcon icon={faCodepen} />&nbsp;&nbsp;&nbsp;&nbsp;Hackerrank</a></Typography><br/>
-          </Box>
-          <Box className="bills-card">
-            <Typography variant="h4">Current status</Typography><br/><Divider/><br/>
-              <Typography variant="body1" sx = {{color:"red"}}>Not placed</Typography><br/><br/><br/>
-              <Typography variant="h4">Ongoing</Typography><br/><Divider/><br/>
-              <Typography variant="body1" sx = {{color:"green"}}>Internship in Accenture starting from May 20 to July 19</Typography><br/>
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="stretch"
+        >
+          {/* Profile Card */}
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                boxShadow: 3,
+                borderRadius: 2,
+                backgroundColor: 'white',
+                textAlign: 'center',
+                height: '100%', // Ensures equal height
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                padding: 3,
+              }}
+            >
+              <Avatar
+                src="images/img_white.jpg"
+                alt="Profile"
+                sx={{
+                  width: 150,
+                  height: 150,
+                  margin: '0 auto 16px',
+                }}
+              />
+              <Typography variant="h5" gutterBottom>
+                Athulya T S
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                +91 8*****1444
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                athulya1906@gmail.com
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                727721euit018@skcet.ac.in
+              </Typography>
+            </Card>
+          </Grid>
+
+          {/* Social Accounts */}
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                boxShadow: 3,
+                borderRadius: 2,
+                padding: 3,
+                backgroundColor: 'white',
+                height: '100%', // Ensures equal height
+                display: 'flex',
+                flexDirection: 'column',
+                // justifyContent: 'center',
+              }}
+            >
+              <Typography variant="h5" gutterBottom>
+                Social Accounts
+              </Typography>
+              <Divider sx={{ marginBottom: 2 }} />
+              {[
+                { name: 'Google', icon: faGoogle, link: 'https://myaccount.google.com/' },
+                { name: 'LinkedIn', icon: faLinkedin, link: 'https://www.linkedin.com/in/athulya-t-s-132538258/' },
+                { name: 'Leetcode', icon: faCodepen, link: 'https://leetcode.com/u/Athulya_T_S/' },
+                { name: 'Github', icon: faGithubSquare, link: 'https://github.com/Athulya-ts' },
+                { name: 'Hackerrank', icon: faCodepen, link: 'https://www.hackerrank.com/profile/727721euit018' },
+              ].map((account, index) => (
+                <Typography
+                  key={index}
+                  variant="body1"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 2,
+                    marginBottom: 1.5,
+                    color: '#4f46e5',
+                    '&:hover': { textDecoration: 'underline' },
+                  }}
+                >
+                  <FontAwesomeIcon icon={account.icon} />
+                  <a
+                    href={account.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    {account.name}
+                  </a>
+                </Typography>
+              ))}
+            </Card>
+          </Grid>
+
+          {/* Status Card */}
+          <Grid item xs={12} md={4}>
+            <Card
+              sx={{
+                boxShadow: 3,
+                borderRadius: 2,
+                padding: 3,
+                backgroundColor: 'white',
+                height: '100%', // Ensures equal height
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography variant="h5" gutterBottom>
+                Current Status
+              </Typography>
+              <Divider sx={{ marginBottom: 2 }} />
+              <Typography variant="body1" color="text.secondary" gutterBottom>
+                Placed in:
+                <ul>
+                  <li>EY</li>
+                  <li>Accenture</li>
+                  <li>Cognizant</li>
+                </ul>
+              </Typography>
+              <Typography variant="body1" color="text.secondary" gutterBottom>
+                Internship @ Accenture, Bangalore from May 20, 2024 to July 19, 2024
+              </Typography>
+              <Typography variant="h5" gutterBottom sx={{ marginTop: 3 }}>
+                Upcoming
+              </Typography>
+              <Divider sx={{ marginBottom: 2 }} />
+              <Typography variant="body1" color="error">
+                Internship @ Amazon, Chennai from Jan 6, 2025 to June 27, 2025
+              </Typography>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 
