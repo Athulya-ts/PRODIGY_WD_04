@@ -44,20 +44,31 @@ const Projects = () => {
                   '&:hover': { transform: 'scale(1.05)', boxShadow: 6 },
                 }}
               >
-                <CardMedia
-                  component="img"
-                  height="180"
-                  image={project.img}
-                  alt={project.name}
+                <Box
                   sx={{
-                    objectFit: 'cover',
+                    overflow: 'hidden',
+                    borderRadius: '8px 8px 0 0',
                   }}
-                />
+                >
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={project.img}
+                    alt={project.name}
+                    sx={{
+                      objectFit: 'cover',
+                      transition: 'transform 0.3s ease',
+                      '&:hover': {
+                        transform: 'scale(1.1)',
+                      },
+                    }}
+                  />
+                </Box>
                 <CardContent
                   sx={{
                     textAlign: 'center',
                     backgroundColor: '#ffffff',
-                    padding: 1,
+                    padding: 1.5,
                   }}
                 >
                   <Typography

@@ -216,44 +216,7 @@ button:hover {
 .w3-card{
       transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
 }
-/*EZRecharge.css*/
-.ez-recharge-container {
-    padding: 20px;
-  }
-  
-  .ez-recharge-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .ez-recharge-video-container,
-  .ez-recharge-description,
-  .ez-recharge-tech-stack {
-    margin-bottom: 30px;
-    line-height: 15px;
-  }
-  
-  .ez-recharge-video {
-    width: 100%;
-  }
-  
-  .ez-recharge-description ul {
-    list-style-type:decimal;
-  }
-  
-  /* Add animations and transitions as needed */
-  .project-img-container {
-    width: 100%;
-    height: 260px; /* Set the desired height */
-    overflow: hidden; /* Clip the image */
-    position: relative;
-  }
-  
-  .project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-  }
+
   /*Profile.css*/
   .dashboard-container {
     display: flex;

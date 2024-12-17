@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
-import '../Pages/Pages.css'
 
 function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -17,6 +16,9 @@ function Navbar() {
   return (
     <AppBar position="fixed" sx={{ bgcolor: "#ececec", color: "black" }}>
       <Toolbar>
+        <Button component={Link} to="/profile" color="inherit">
+          <i className="fa fa-user-circle-o" style={{ fontSize: 27, color: 'inherit' }}></i>
+        </Button>
         <Typography
           variant="h6"
           component={Link}
