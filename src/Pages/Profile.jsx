@@ -148,6 +148,7 @@ const Profile = () => {
                   <li>EY</li>
                   <li>Accenture</li>
                   <li>Cognizant</li>
+                  <li>TCS</li>
                 </ul>
               </Typography>
               <Typography variant="body1" color="text.secondary" gutterBottom>
