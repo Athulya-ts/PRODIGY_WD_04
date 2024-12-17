@@ -1,49 +1,154 @@
 /*Home.css*/
-body{
-    /* background-color: #ececec; */
-    background-color: #f4f6f8;
-    color: rgb(50, 50, 50);
+/* General styles */
+body {
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  background: #fef9fb;
+  color: #2d2d2d;
 }
-.home{
-    margin-left: 5%;
-    margin-right: 5%;
+
+/* Container layout */
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
 }
-.home-name{
-    font-size: 70px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+/* Left Section */
+.home-left {
+  flex: 0 0 70%; /* Set the width to 75% */
+  text-align: left;
+  padding: 20px;
+  animation: fadeInLeft 1s ease-in;
 }
-.home-left{
-    width: 50%;
-    float: left;
+
+.home-name-div h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
-.home-right{
-    width: 50%;
-    float: right;
+
+.home-desc {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-top: 10px;
 }
-.home-img{
-    margin-top: 9%;
-    margin-left: 30%;
-    border: 5px solid rgba(255, 105, 135, 0.3); /* Set border color */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+
+.home-desc p {
+  margin-bottom: 15px;
 }
-.home-desc{
-    background-color: rgba(255, 105, 135, 0.3); /* Lighter background color */
-    padding: 20px;
-    width : 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+
+/* Right Section */
+.home-right {
+  flex: 0 0 25%; /* Set the width to 25% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeInRight 1s ease-in;
 }
-.home-name-div{
-    line-height: 0.3;
-    margin-top: 23%;
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
 }
-.home-img-flower {
-    position: absolute;
-    top: 83%;
-    right: 20%;
+
+.home-img {
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
+
+/* Hover effects */
+.home-img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Button styles */
+button {
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .home-left {
+      padding: 10px;
+  }
+
+  .home-name-div h1 {
+      font-size: 2.5rem;
+  }
+
+  .home-right {
+      margin-top: 20px;
+  }
+
+  .home-img {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-name-div h1 {
+      font-size: 2rem;
+  }
+
+  .home-desc {
+      font-size: 1rem;
+  }
+}
+
+
   
 /*About*/
 .about-left{
@@ -184,3 +289,30 @@ body{
     float: right;
   }
   
+  /* General styles */
+.navbar-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: black;
+  display: none; /* Hidden by default for larger screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-buttons {
+    display: none; /* Hide buttons on smaller screens */
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon for smaller screens */
+  }
+}
+
+/* Sticky navbar */
+.MuiAppBar-root {
+  z-index: 1201; /* Ensure it stays above other content */
+}

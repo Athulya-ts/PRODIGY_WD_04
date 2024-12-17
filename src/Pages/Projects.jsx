@@ -1,85 +1,82 @@
-import React from 'react'
-import './Pages.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Pages.css';
+import { Link } from 'react-router-dom';
+import { Grid, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 
 const Projects = () => {
+  const projects = [
+    { name: '3 PIXELS', img: 'images/3-pixels.png', link: '/Pixels' },
+    { name: 'EZRecharge', img: 'images/EZRecharge.png', link: '/EZRecharge' },
+    { name: 'HR Management Portal', img: 'images/HR-management-portal.png', link: '/HRManagement' },
+    { name: 'Tic Tac Toe', img: 'images/tic-tac-toe.png', link: '/TicTacToe' },
+    { name: 'Weather App', img: 'images/weather-app.png', link: '/WeatherApp' },
+  ];
+
   return (
-    <div>
-    <center>
-        <br/>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-third">
-                <Link to = "/Pixels">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/3-pixels.png" style={{width: '100%'}} alt = "3Pixels"/>
-                        <div class="w3-container">
-                            <h5>3 PIXELS</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div>
+    <Box
+      sx={{
+        background: 'linear-gradient(135deg, #f3f4f6, #e0e7ff)',
+        padding: 3,
+        minHeight: '100vh',
+      }}
+    >
+      <Typography
+        variant="h3"
+        textAlign="center"
+        sx={{
+          fontWeight: 'bold',
+          marginBottom: 3,
+          color: '#1e293b',
+        }}
+      >
+        My Projects
+      </Typography>
 
-            <div class="w3-third">
-                <Link to = "/EZRecharge">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/EZRecharge.png" style={{width: '100%'}} alt = "EZRecharge"/>
-                        <div class="w3-container">
-                            <h5>EZRecharge</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div>
+      <Grid container spacing={4} justifyContent="center">
+        {projects.map((project, index) => (
+          <Grid item xs={12} sm={5} md={4} key={index}>
+            <Link to={project.link} style={{ textDecoration: 'none' }}>
+              <Card
+                sx={{
+                  boxShadow: 3,
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  '&:hover': { transform: 'scale(1.05)', boxShadow: 6 },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="180"
+                  image={project.img}
+                  alt={project.name}
+                  sx={{
+                    objectFit: 'cover',
+                  }}
+                />
+                <CardContent
+                  sx={{
+                    textAlign: 'center',
+                    backgroundColor: '#ffffff',
+                    padding: 1,
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: '#4f46e5',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    {project.name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+};
 
-            <div class="w3-third">
-                <Link to = "/HRManagement">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/HR-management-portal.png" style={{width: '100%'}} alt = "HR Manegement Portal"/>
-                        <div class="w3-container">
-                            <h5>HR Management Portal</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-        </div>
-
-        <div class="w3-row-padding w3-margin-top" style = {{marginLeft:'17%',minWidth: '100%'}}>
-            <div class="w3-third">
-                <Link to = "/TicTacToe">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/tic-tac-toe.png" style={{width: '100%'}} alt = "Tic Tac Toe"/>
-                        <div class="w3-container">
-                            <h5>Tic Tac Toe</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-
-            <div class="w3-third">
-                <Link to = "/WeatherApp">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/weather-app.png" style={{width: '100%'}} alt = "Weather App"/>
-                        <div class="w3-container">
-                            <h5>Weather App</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-            
-
-            {/* <div class="w3-third">
-                <Link to = "/Portfolio">
-                    <div class="w3-card">
-                        <img className = "project-img" src="images/portfolio.png" style={{width: '100%'}} alt = "Portfolio"/>
-                        <div class="w3-container">
-                            <h5>Portfolio</h5>
-                        </div>
-                    </div>
-                </Link>
-            </div> */}
-        </div>
-        </center>
-    </div>
-  )
-}
-
-export default Projects
+export default Projects;
