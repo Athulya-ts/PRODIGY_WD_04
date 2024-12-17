@@ -1,7 +1,7 @@
 /*Home.css*/
 /* General styles */
 body {
-  margin: 0;
+  margin-top: 50px;
   font-family: 'Poppins', sans-serif;
   background: #fef9fb;
   color: #2d2d2d;
@@ -289,3 +289,30 @@ button:hover {
     float: right;
   }
   
+  /* General styles */
+.navbar-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: black;
+  display: none; /* Hidden by default for larger screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-buttons {
+    display: none; /* Hide buttons on smaller screens */
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon for smaller screens */
+  }
+}
+
+/* Sticky navbar */
+.MuiAppBar-root {
+  z-index: 1201; /* Ensure it stays above other content */
+}
