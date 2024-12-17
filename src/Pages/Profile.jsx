@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Box, Avatar, Typography, Divider, Grid, Card} from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGoogle, faGithubSquare, faCodepen } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithubSquare, faCodepen } from '@fortawesome/free-brands-svg-icons';
 
 const Profile = () => {
   return (
@@ -92,7 +92,6 @@ const Profile = () => {
               </Typography>
               <Divider sx={{ marginBottom: 2 }} />
               {[
-                { name: 'Google', icon: faGoogle, link: 'https://myaccount.google.com/' },
                 { name: 'LinkedIn', icon: faLinkedin, link: 'https://www.linkedin.com/in/athulya-t-s-132538258/' },
                 { name: 'Leetcode', icon: faCodepen, link: 'https://leetcode.com/u/Athulya_T_S/' },
                 { name: 'Github', icon: faGithubSquare, link: 'https://github.com/Athulya-ts' },
